@@ -83,15 +83,7 @@ public class ModuleElectricity extends RailcraftModule {
                     'G', "ingotGold",
                     'R', "blockRedstone");
 
-        EnumMachineDelta delta = EnumMachineDelta.WIRE;
-        if (delta.register())
-            RailcraftCraftingManager.rollingMachine.getRecipeList().add(new ShapedOreRecipe(delta.getItem(8),
-                    "LPL",
-                    "PCP",
-                    "LPL",
-                    'C', "blockCopper",
-                    'P', Items.paper,
-                    'L', "ingotLead"));
+
     }
 
 }

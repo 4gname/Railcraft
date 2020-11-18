@@ -83,68 +83,6 @@ public class ItemRail extends ItemRailcraft {
 
     @Override
     public void defineRecipes() {
-        RailcraftItem item = RailcraftItem.rail;
-
-        // Standard
-        RailcraftCraftingManager.rollingMachine.addRecipe(item.getStack(8, EnumRail.STANDARD),
-                "I I",
-                "I I",
-                "I I",
-                'I', Items.iron_ingot);
-
-        IRecipe recipe = new ShapedOreRecipe(item.getStack(6, EnumRail.STANDARD),
-                "I I",
-                "I I",
-                "I I",
-                'I', "ingotBronze");
-        RollingMachineCraftingManager.getInstance().getRecipeList().add(recipe);
-
-        recipe = new ShapedOreRecipe(item.getStack(16, EnumRail.STANDARD),
-                "I I",
-                "I I",
-                "I I",
-                'I', "ingotSteel");
-        RollingMachineCraftingManager.getInstance().getRecipeList().add(recipe);
-
-        // Advanced
-        RailcraftCraftingManager.rollingMachine.addRecipe(item.getStack(8, EnumRail.ADVANCED),
-                "IRG",
-                "IRG",
-                "IRG",
-                'I', item.getRecipeObject(EnumRail.STANDARD),
-                'R', new ItemStack(Items.redstone),
-                'G', new ItemStack(Items.gold_ingot));
-
-        // Wooden
-        CraftingPlugin.addShapelessRecipe(item.getStack(6, EnumRail.WOOD), "ingotIron", RailcraftItem.tie.getRecipeObject(EnumTie.WOOD));
-
-        // Speed
-        recipe = new ShapedOreRecipe(item.getStack(8, EnumRail.SPEED),
-                "IBG",
-                "IBG",
-                "IBG",
-                'I', "ingotSteel",
-                'B', Items.blaze_powder,
-                'G', Items.gold_ingot);
-        RollingMachineCraftingManager.getInstance().getRecipeList().add(recipe);
-
-        // Reinforced
-        recipe = new ShapedOreRecipe(item.getStack(8, EnumRail.REINFORCED),
-                "IDI",
-                "IDI",
-                "IDI",
-                'I', "ingotSteel",
-                'D', "dustObsidian");
-        RollingMachineCraftingManager.getInstance().getRecipeList().add(recipe);
-
-        // Electric
-        recipe = new ShapedOreRecipe(item.getStack(6, EnumRail.ELECTRIC),
-                "ICI",
-                "ICI",
-                "ICI",
-                'I', item.getRecipeObject(EnumRail.STANDARD),
-                'C', "ingotCopper");
-        RollingMachineCraftingManager.getInstance().getRecipeList().add(recipe);
     }
 
     @Override

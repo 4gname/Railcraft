@@ -87,19 +87,6 @@ public class ModuleIC2 extends RailcraftModule {
     private static void createRecipes() {
         Block blockDetector = BlockDetector.getBlock();
 
-        if (blockDetector != null) {
-            ItemStack stack = EnumDetector.ENERGY.getItem();
-            Object tin = RailcraftItem.plate.getRecipeObject(EnumPlate.TIN);
-            if (tin == null)
-                tin = "ingotTin";
-            CraftingPlugin.addShapedRecipe(stack, false,
-                    "XXX",
-                    "XPX",
-                    "XXX",
-                    'X', tin,
-                    'P', Blocks.stone_pressure_plate);
-        }
-
         ItemStack batbox = IC2Plugin.getItem("batBox");
         if (batbox != null) {
             EnumCart cart = EnumCart.ENERGY_BATBOX;
@@ -174,28 +161,6 @@ public class ModuleIC2 extends RailcraftModule {
             detector = EnumDetector.ENERGY.getItem();
         else
             detector = new ItemStack(Blocks.stone_pressure_plate);
-
-        if (battery != null && machine != null) {
-            if (EnumMachineGamma.ENERGY_LOADER.isAvaliable())
-                Recipes.advRecipes.addRecipe(EnumMachineGamma.ENERGY_LOADER.getItem(),
-                        "BLB",
-                        "BIB",
-                        "BDB",
-                        'D', detector,
-                        'B', battery,
-                        'I', machine,
-                        'L', new ItemStack(Blocks.hopper));
-
-            if (EnumMachineGamma.ENERGY_UNLOADER.isAvaliable())
-                Recipes.advRecipes.addRecipe(EnumMachineGamma.ENERGY_UNLOADER.getItem(),
-                        "BDB",
-                        "BIB",
-                        "BLB",
-                        'D', detector,
-                        'B', battery,
-                        'I', machine,
-                        'L', new ItemStack(Blocks.hopper));
-        }
 
         if (RailcraftConfig.isItemEnabled("ic2.upgrade.lapotron")) {
             ItemStack lapotron = IC2Plugin.getItem("lapotronCrystal");
